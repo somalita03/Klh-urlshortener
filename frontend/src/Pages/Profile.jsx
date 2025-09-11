@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Avatar, Text, Stack, Center } from "@mantine/core";
 import Service from "../utils/http";
 
-import profilePic from "../assets/rosy.jpg";
-
 const Profile = () => {
     const service = new Service();
     const [user, setUser] = useState(null);
@@ -36,7 +34,7 @@ const Profile = () => {
         <Center h="100vh">
             <Card shadow="md" radius="lg" padding="xl" withBorder>
                 <Stack align="center" spacing="md">
-                    <Avatar src={profilePic} size={120} radius="50%" />
+                    <Avatar src={`${user?.avatar}`} size={120} radius="50%" />
                     <Text size="xl" fw={700}>
                         {user.name ||"User"}
                     </Text>
